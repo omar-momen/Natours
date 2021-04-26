@@ -1,0 +1,101 @@
+.form {
+  width: 50%;
+  padding: 7rem 5rem 0;
+  &__group {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+  &__input {
+    font-family: inherit;
+    font-size: 2rem;
+    padding: 1rem 1.3rem;
+    border: 1px solid rgba(225, 225, 255, 0.5);
+    display: block;
+    width: 90%;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease-in-out;
+    border-radius: 0.3rem;
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+      border-bottom: 3px solid $DarkGreen;
+    }
+    &:focus:invalid {
+      border-bottom: 3px solid orangered;
+    }
+    &::placeholder {
+      color: #999;
+    }
+  }
+  &__label {
+    font-size: 1.6rem;
+    margin: 0.6rem 0 0 1.5rem;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+  }
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-3rem);
+  }
+  &__radio_group {
+    display: inline-block;
+    margin-right: 2rem;
+  }
+  &__radio-input {
+    display: none;
+  }
+  &__radio-label {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #777;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      color: #000;
+    }
+  }
+  &__radio-button {
+    margin-right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    border: 5px solid $DarkGreen;
+    display: inline-block;
+    border-radius: 50%;
+    transform: translateY(0.8rem);
+    position: relative;
+    cursor: pointer;
+    &::after {
+      content: "";
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      background: $DarkGreen;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &__radio-input:checked + &__radio-label &__radio-button::after {
+    opacity: 1;
+  }
+  &__radio-input:checked + &__radio-label {
+    color: #000;
+  }
+
+  @media (max-width: 992px) {
+    & {
+      width: 70%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    & {
+      width: 100%;
+    }
+  }
+}

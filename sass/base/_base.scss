@@ -1,0 +1,43 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+
+  @media (max-width: 1200px) {
+    font-size: 62.5%;
+  }
+  // Default => 10 * 100 / 16 = 62.5 (1rem = 10px)
+
+  @media (max-width: 992px) {
+    font-size: 56.25%;
+  }
+  // 9 * 100 / 16 = 56.25 (1rem = 9px)
+
+  @media (max-width: 768px) {
+    font-size: 50%;
+  }
+  // 8 * 100 / 16 = 50 (1rem = 8px)
+
+  // @media (max-width: 576px) {
+  //   font-size: 43.75%;
+  // }
+  // 7 * 100 / 16 = 43.75 (1rem = 7px)
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  box-sizing: border-box;
+  @media (max-width: 992px) {
+    padding: 0;
+  }
+}
